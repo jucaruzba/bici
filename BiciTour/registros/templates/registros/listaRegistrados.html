@@ -1,0 +1,54 @@
+{% extends "inicio/encabezado.html"%}{% block titulo%} Tours {% endblock %} {% block contenido %}
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<center>
+<div class="col-md-6" style="" >
+    <div class="" style="">
+         <!-- Tabla de Alumnos -->
+         <table class="table table-bordered tablestriped">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Mensaje</th>
+                    <th>Fecha del registro</th>
+                    <th>Tour</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cliente in clientes %}
+                    <tr>
+                        <td class="text-semibold">{{cliente.nombre_c}}</td>
+                        <td class="muted">{{cliente.apellido_p}}</td>
+                        <td class="muted">{{cliente.mensaje_c}}</td>
+                        <td class="muted">{{cliente.created}}</td>
+                        <td class="muted">{{cliente.tour_c}}</td>
+
+                        {% comment %} {%url 'EliminarA' comentario.id%} {% endcomment %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+    </div>
+</div>
+
+    <br>
+    <br>
+    <br>
+
+    <td class="">
+        <a class="btn btn-primary" href="{%url 'Regresar'%}">Regresar</a>
+    </td>
+</center>
+
+
+
+{% endblock %}
