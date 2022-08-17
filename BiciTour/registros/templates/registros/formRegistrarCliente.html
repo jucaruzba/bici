@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>{% block titulo %} {% endblock %}</title>
+</head>
+
+
+<style>
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(5, 58, 110, 0.3); 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(7, 6, 97, 0.5);
+}
+</style>
+
+<body>
+    
+<br><br>
+
+<!-- Form section-->
+<div class="container px-2">
+	<div class="row gx-4 justify-content">
+		<div class="col-lg-8">
+			<h2>Inscripción</h2>
+			<p class="lead">Dejanos tu mensaje por aquí y dinos que recorrido te interesó más</p>
+
+			<form action="{% url 'RegistrarCliente'%}" method="POST" role="form">
+
+			  {%csrf_token%}
+				<div class="form-group">
+					<label for="exampleInputPassword1">Nombre</label>
+					<input name="nombre_c" type="text" class="form-control"  placeholder="">
+				</div>
+
+				<div class="form-group">
+					<label for="exampleInputPassword1">Apellido paterno</label>
+					<input name="apellido_p" type="text" class="form-control"  placeholder="">
+				</div>
+
+				<div class="form-group">
+					<label for="exampleInputPassword1">Apellido materno</label>
+					<input name="apellido_m" type="text" class="form-control"  placeholder="">
+				</div>
+
+				<div class="form-group">
+				  <label for="exampleInputEmail1">Correo</label>
+				  <input name="correo_c" type="email" class="form-control"  aria-describedby="emailHelp" placeholder="Email">
+				  <small id="emailHelp" class="form-text text-muted">Nunca compartiremos tu correo.</small>
+				</div>
+
+				<div class="form-group">
+					<label for="exampleInputPassword1">Teléfono de contacto</label>
+					<input name="telefono_c" type="numeric" class="form-control"  placeholder="">
+				</div>
+
+				<div class="form-group">
+					<input name="tour_c" type="hidden" class="form-control" value={{tour.id}}>
+				</div>
+
+				  <div class="form-group">
+					<label for="exampleFormControlTextarea1">Mensaje</label>
+					<textarea name="mensaje_c" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+				  </div>
+				{% comment %} <button type="submit" class="btn btn-primary">Enviar</button> {% endcomment %}
+				<div class="form-actions text-right">
+				  <input type="submit" value="Enviar" class="btn btn-primary">
+				</div>
+			  </form>
+		</div>
+	</div>
+</div>
+<!-- Form section-->
+
+
+    <script type="module " src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js "></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js "></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js " integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js " integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy " crossorigin="anonymous "></script>
+
+
+</body>
+
+</html>
+
+
+
+			

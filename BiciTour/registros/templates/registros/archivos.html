@@ -1,0 +1,68 @@
+{% extends "inicio/encabezado.html"%} {% block titulo%} Experiencias {% endblock %} {% block contenido %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style3.css' %}">
+
+<div class="a"  style="background-color:rgb(0, 0, 0); padding-top: 30px; padding-bottom: 50px;">
+
+    <div class="col-3 row-2 mt-3" style="width:500px;  margin-left:100px; border-radius: 51px;">
+    
+        <div class="card">
+            <div class="card2">
+<form class="form-horizontal" action="{% url 'Subir'%}" method="POST" enctype="multipart/form-data" role="form">
+    {%csrf_token%}
+    <div class="panel panel-default">
+        <div class="panel-body text-light">
+
+            <div class="mb-3">
+                <h5 class="card-title m-auto-0">Cuentanos tu experiencia</h5><br>
+                <label class="col-sm-2 control-label text-right">Nombre:</label>
+                <input name="nombre" required type="text" class="form-control">
+                </div>
+            <div class="mb-3">
+                <label class="col-sm-2 control-label text-right">Email:</label>
+                <input name="email" required cols="30" rows="5" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="col-sm-2 control-label text-right">Mensaje:</label>
+                <textarea name="mensaje" required cols="50" rows="10" class="form-control"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label class=" col-sm-2 control-label text-right">Archivo:</label>
+                <div class="col-sm-10">
+                    <input class="form-control" required type="file" name="archivo" />
+                </div>
+            </div>
+            <br>
+            <button>
+                <div class="svg-wrapper-1">
+                  <div class="svg-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                      <path fill="none" d="M0 0h24v24H0z"></path>
+                      <path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path>
+                    </svg>
+                  </div>
+                </div>
+                <span><input type="submit" value="Enviar" class="btn btn-primary"></span>
+              </button>
+            
+
+        </div>
+    </div>
+</form>
+                </div>
+            </div>
+        </div>
+</div>
+    </div>
+
+    <br><br>
+
+    
+
+
+
+
+             
+  
+        {% endblock %}
